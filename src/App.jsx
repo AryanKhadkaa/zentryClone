@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import { Hero } from "./components/hero";
 
- const App = () => {
+const App = () => {
   return (
-    <main>
-      <h1 className='text-blue-50'>Awards</h1>
+    <main className="relative min-h-screem w-screen overflow-x-hidden">
+      <Hero></Hero>
     </main>
-       )
-}
+  );
+};
 
 export default App;
