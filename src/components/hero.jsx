@@ -75,6 +75,7 @@ export const Hero = () => {
         start: "center center",
         end: "bottom center",
         scrub: true,
+        //markers: true, to better understand the positions of animations, visually see start and end points
       },
     });
   });
