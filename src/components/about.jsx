@@ -15,7 +15,7 @@ const About = () => {
         scrub: 0.5,
         pin: true,
         pinSpacing: true,
-        markers: true,
+        //markers: true,
       },
     });
     clipAnimation.to(".mask-clip-path", {
@@ -34,6 +34,7 @@ const About = () => {
 
         <AnimatedTitle
           title={"DISC<b>O</b>VER THE WORLD'S LARGEST SHARED <b>A</b>DVENTURE"}
+          containerClass={"mt-5 !text-black text-white"}
         />
 
         <div className="about-subtext">
@@ -42,7 +43,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="h-dvh w-screen bg-red-500" id="clip">
+      <div className="h-dvh w-screen" id="clip">
         <div className="mask-clip-path about-image">
           <img
             src="img/about.webp"
