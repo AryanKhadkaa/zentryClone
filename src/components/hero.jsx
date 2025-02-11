@@ -150,6 +150,9 @@ export const Hero = () => {
             <p className="text-blue-100 font-robert-regular max-w-64 mb-5">
               Enter the Metagame Layer <br /> Unleash the Play Economy
             </p>
+
+            {/* Button */}
+
             <Button
               id="watch-trailer"
               title="Watch Trailer"

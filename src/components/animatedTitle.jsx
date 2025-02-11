@@ -4,14 +4,14 @@ import { useEffect, useRef } from "react";
 import clsx from "clsx";
 
 export const AnimatedTitle = ({ title, containerClass }) => {
-  const containerRef = useRef(null);
+  const containerRef = useRef(null); //to target the div for animation
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       const titleAnimation = gsap.timeline({
         scrollTrigger: {
-          trigger: containerRef.current,
+          trigger: containerRef.current, //trigger indicated that animation will happen/end based on the containerRef's position in the view port
           start: "100 bottom",
           end: "center bottom",
           toggleActions: "play none none reverse",
@@ -42,20 +42,18 @@ export const AnimatedTitle = ({ title, containerClass }) => {
     // </div>
 
     <div ref={containerRef} className={clsx("animated-title", containerClass)}>
-      {title.split("<br />").map((line, index) => (
+      {title.split("<br />").map((line, idx) => (
         <div
-          key={index}
+          key={idx}
           className="flex-center max-w-full flex-wrap gap-2 px-10 md:gap-3"
         >
-          {line.split(" ").map((word, idx) => {
-            return (
-              <span
-                key={idx}
-                className="animated-word"
-                dangerouslySetInnerHTML={{ __html: word }}
-              />
-            );
-          })}
+          {line.split(" ").map((word, i) => (
+            <span
+              key={i}
+              className="animated-word"
+              dangerouslySetInnerHTML={{ __html: word }}
+            ></span>
+          ))}
         </div>
       ))}
     </div>
